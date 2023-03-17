@@ -24,7 +24,7 @@ public class MonsterController : MonoBehaviour
         // 如果怪物追到了玩家，就结束游戏
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

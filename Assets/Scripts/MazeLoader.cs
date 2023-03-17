@@ -1,21 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class MazeLoader : MonoBehaviour {
 	public int mazeRows, mazeColumns;
 	public GameObject wall;
-	//public GameObject floor;
+	public GameObject floor;
 	public float size = 2f;
 	public GameObject portal;
+	public GameObject trap;
+
+	public int trapsCount;
+	//public GameObject Player;
 
 	private MazeCell[,] mazeCells;
 
 	// Use this for initialization
 	void Start () {
 		InitializeMaze ();
-		
-		Instantiate(portal,new Vector3(7,-2,0),Quaternion.identity);
+		//Instantiate(Player,new Vector3(1,1,1),Quaternion.identity);
+		int randomX = Random.Range(0, mazeRows);
+		int randomZ = Random.Range(0, mazeColumns);
+		Instantiate(portal,new Vector3(randomX * 6,-2,randomZ * 6),Quaternion.identity);
 
+		float trapSize = 1f;
+		Vector3 trapOffset = new Vector3(trapSize * 0.5f, 0, trapSize * 0.5f); // 陷阱在中心的偏移量
+
+		for (int i = 0; i < trapsCount; i++)
+		{
+			int x = Random.Range(0, mazeRows);
+			int z = Random.Range(0, mazeColumns);
+			Vector3 trapPosition = new Vector3(x * 6, -2.5f, z * 6) + trapOffset;
+			
+			Instantiate(trap, trapPosition, Quaternion.identity);
+		}
 		MazeAlgorithm ma = new HuntAndKillMazeAlgorithm (mazeCells);
 		ma.CreateMaze ();
 	}
@@ -33,7 +51,7 @@ public class MazeLoader : MonoBehaviour {
 				mazeCells [r, c] = new MazeCell ();
 
 				// For now, use the same wall object for the floor!
-				mazeCells [r, c] .floor = Instantiate (wall, new Vector3 (r*size, -(size/2f), c*size), Quaternion.identity) as GameObject;
+				mazeCells [r, c] .floor = Instantiate (floor, new Vector3 (r*size, -(size/2f), c*size), Quaternion.identity) as GameObject;
 				mazeCells [r, c] .floor.name = "Floor " + r + "," + c;
 				mazeCells [r, c] .floor.transform.Rotate (Vector3.right, 90f);
 
