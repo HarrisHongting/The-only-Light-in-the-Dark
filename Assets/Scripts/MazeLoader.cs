@@ -17,10 +17,14 @@ public class MazeLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+		
 		InitializeMaze ();
 		//Instantiate(Player,new Vector3(1,1,1),Quaternion.identity);
-		int randomX = Random.Range(0, mazeRows);
-		int randomZ = Random.Range(0, mazeColumns);
+		int randomX = Random.Range(Mathf.FloorToInt(mazeRows/2), mazeRows);
+		int randomZ = Random.Range(Mathf.FloorToInt(mazeColumns/2), mazeColumns);
 		Instantiate(portal,new Vector3(randomX * 6,-2,randomZ * 6),Quaternion.identity);
 
 		float trapSize = 1f;
@@ -28,8 +32,8 @@ public class MazeLoader : MonoBehaviour {
 
 		for (int i = 0; i < trapsCount; i++)
 		{
-			int x = Random.Range(0, mazeRows);
-			int z = Random.Range(0, mazeColumns);
+			int x = Random.Range(1, mazeRows);
+			int z = Random.Range(1, mazeColumns);
 			Vector3 trapPosition = new Vector3(x * 6, -2.5f, z * 6) + trapOffset;
 			
 			Instantiate(trap, trapPosition, Quaternion.identity);

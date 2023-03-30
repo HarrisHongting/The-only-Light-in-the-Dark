@@ -15,7 +15,7 @@ public class DDT : MonoBehaviour
 
     private void Start()
     {
-        _initSize = 0.1f;
+        _initSize = 0.01f;
         if (_cpv.customPasses[0] is TIPS_2 f)
         {
             t2 = f;

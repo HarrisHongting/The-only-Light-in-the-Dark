@@ -94,7 +94,7 @@ namespace StarterAssets
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
 		}
-
+		
 		private void Start()
 		{
 			_controller = GetComponent<CharacterController>();
@@ -109,6 +109,8 @@ namespace StarterAssets
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 		}
+
+		public MonsterController monsterController;
 
 		private void Update()
 		{

@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b806b7fe1d7fc8a4ca51ee092d0b4b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 3130638937415465320}
 --- !u!114 &369662072229694867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,7 +370,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
