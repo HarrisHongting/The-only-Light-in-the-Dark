@@ -18,6 +18,8 @@ public class MazeLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
+		GenerateOuterWalls();
+		
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 		
@@ -25,16 +27,16 @@ public class MazeLoader : MonoBehaviour {
 		//Instantiate(Player,new Vector3(1,1,1),Quaternion.identity);
 		int randomX = Random.Range(Mathf.FloorToInt(mazeRows/2), mazeRows);
 		int randomZ = Random.Range(Mathf.FloorToInt(mazeColumns/2), mazeColumns);
-		Instantiate(portal,new Vector3(randomX * 6,-2,randomZ * 6),Quaternion.identity);
+		Instantiate(portal,new Vector3(randomX * 5,-1.5f,randomZ * 5),Quaternion.identity);
 
 		float trapSize = 1f;
 		Vector3 trapOffset = new Vector3(trapSize * 0.5f, 0, trapSize * 0.5f); // 陷阱在中心的偏移量
 
 		for (int i = 0; i < trapsCount; i++)
 		{
-			int x = Random.Range(1, mazeRows);
-			int z = Random.Range(1, mazeColumns);
-			Vector3 trapPosition = new Vector3(x * 6, -2.5f, z * 6) + trapOffset;
+			int x = Random.Range(4, mazeRows);
+			int z = Random.Range(4, mazeColumns);
+			Vector3 trapPosition = new Vector3(x * 5, -1.5f, z * 5) + trapOffset;
 			
 			Instantiate(trap, trapPosition, Quaternion.identity);
 		}
@@ -78,5 +80,9 @@ public class MazeLoader : MonoBehaviour {
 				mazeCells [r, c].southWall.transform.Rotate (Vector3.up * 90f);
 			}
 		}
+	}
+	void GenerateOuterWalls()
+	{
+		
 	}
 }

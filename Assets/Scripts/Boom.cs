@@ -19,6 +19,7 @@ public class Boom : MonoBehaviour
         {
             // 碰撞到墙体，播放声音
             audioSource.PlayOneShot(hitWallSound);
+            other.gameObject.SetActive(false);
         }
     }
 }

@@ -1993,14 +1993,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334ef5519144d0e438a932a03abdacc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeRows: 20
-  mazeColumns: 25
+  mazeRows: 16
+  mazeColumns: 22
   wall: {fileID: 101274, guid: 2a571ace6952b154ca2ff06b0540f264, type: 3}
   floor: {fileID: 2328171833394440284, guid: 65466e009f8fa02429b2269a815a1afe, type: 3}
   size: 6
   portal: {fileID: 2418254228774018202, guid: ff38554ef22190c409b59ddfd146eb78, type: 3}
-  trap: {fileID: 1868051716852359747, guid: ae5efc5a421b21540bd56da0765e940a, type: 3}
-  trapsCount: 15
+  trap: {fileID: 5494598163409735985, guid: 8a2a02aebd6581a4ab153d2102240ea6, type: 3}
+  trapsCount: 20
 --- !u!4 &1062459227
 Transform:
   m_ObjectHideFlags: 0

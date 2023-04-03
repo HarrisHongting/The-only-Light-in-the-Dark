@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MonsterController : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 1f;
     public float stoppingDistance = 1f;
     private bool canMove = false;
     
