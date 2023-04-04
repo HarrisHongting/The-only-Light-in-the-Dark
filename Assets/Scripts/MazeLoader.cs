@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Unity.Mathematics;
 using Unity.VisualScripting;
+using Random = UnityEngine.Random;
 
 public class MazeLoader : MonoBehaviour {
 	public int mazeRows, mazeColumns;
 	public GameObject wall;
 	public GameObject floor;
-	public float size = 2f;
+	public float size = 5f;
+	public GameObject OuterWalls;
 	public GameObject portal;
 	public GameObject trap;
 
+	
 	public int trapsCount;
 	//public GameObject Player;
 
@@ -18,6 +22,8 @@ public class MazeLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
+		PlayerPrefs.SetString("LastScene", "Maze0");
+
 		GenerateOuterWalls();
 		
 		Cursor.lockState = CursorLockMode.Locked;
@@ -83,6 +89,39 @@ public class MazeLoader : MonoBehaviour {
 	}
 	void GenerateOuterWalls()
 	{
-		
+		float xPosition, zPosition; // 墙体位置
+		Vector3 position; // 墙体位置向量
+
+		// 生成左右两侧的墙体
+		for (int i = 0; i < mazeColumns; i++) 
+		{
+			// 左侧墙体
+			xPosition = (-size / 2) -0.1f;
+			zPosition = i * size;
+			position = new Vector3(xPosition, 0, zPosition);
+			Instantiate(OuterWalls, position, Quaternion.Euler(0,90,0));
+
+			// 右侧墙体
+			xPosition = mazeRows * size - (size / 2) + 0.1f;
+			zPosition =  i * size;
+			position = new Vector3(xPosition, 0, zPosition);
+			Instantiate(OuterWalls, position, Quaternion.Euler(0,90,0));
+		}
+
+		// 生成上下两侧的墙体
+		for (int i = 0; i < mazeRows; i++) 
+		{
+			// 上侧墙体
+			xPosition = i * size;
+			zPosition = mazeColumns * size - (size / 2) + 0.1f;
+			position = new Vector3(xPosition, 0, zPosition);
+			Instantiate(OuterWalls, position, Quaternion.identity);
+
+			// 下侧墙体
+			xPosition = i * size;
+			zPosition = (-size / 2) - 0.1f;
+			position = new Vector3(xPosition, 0, zPosition);
+			Instantiate(OuterWalls, position, Quaternion.identity);
+		}
 	}
 }

@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1853830357}
-  moveSpeed: 0.5
+  moveSpeed: 1
   stoppingDistance: 1
 --- !u!1001 &698742044
 PrefabInstance:
@@ -529,6 +529,33 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1880643323574687341, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: m_text
+      value: 'Press E to knock the ground with crutch
+
+        Press Q to see the
+        map
+
+        Press shift to sprint
+
+        Press ESC to enter settings'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880643323574687341, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: m_margin.y
+      value: -45.451656
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880643323574687341, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: m_margin.z
+      value: -90.19587
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880643323574687341, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+    - target: {fileID: 1880643323574687341, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
     - target: {fileID: 1880643323574687341, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
@@ -575,11 +602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4995882644518788747, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -488.76285
+      value: -450
       objectReference: {fileID: 0}
     - target: {fileID: 4995882644518788747, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -346.09103
+      value: -350
       objectReference: {fileID: 0}
     - target: {fileID: 5126527961139664760, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1078,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2071618113139343539, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2071618113139343539, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: MaxDistance
@@ -2025,6 +2052,7 @@ MonoBehaviour:
   wall: {fileID: 101274, guid: 2a571ace6952b154ca2ff06b0540f264, type: 3}
   floor: {fileID: 2328171833394440284, guid: 65466e009f8fa02429b2269a815a1afe, type: 3}
   size: 5
+  OuterWalls: {fileID: 8514652774976676210, guid: acbf4b0fd723cb44cbd85b4c925bf4d4, type: 3}
   portal: {fileID: 2418254228774018202, guid: ff38554ef22190c409b59ddfd146eb78, type: 3}
   trap: {fileID: 5494598163409735985, guid: 8a2a02aebd6581a4ab153d2102240ea6, type: 3}
   trapsCount: 15
@@ -2509,7 +2537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1738973984
 MonoBehaviour:
   m_ObjectHideFlags: 0

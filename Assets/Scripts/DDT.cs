@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.SceneManagement;
 
 public class DDT : MonoBehaviour
 {
@@ -24,10 +25,16 @@ public class DDT : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             StartCoroutine(SizeCoRoutine());
         }
+ 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Settings");
+        }
+        
     }
 
     private IEnumerator SizeCoRoutine()
