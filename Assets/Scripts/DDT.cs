@@ -30,10 +30,10 @@ public class DDT : MonoBehaviour
             StartCoroutine(SizeCoRoutine());
         }
  
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("Settings");
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+           // SceneManager.LoadScene("Settings");
+        //}
         
     }
 

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SettingsController : MonoBehaviour
     {
+        void Start()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         public void SetVolume(float value)
         {
             AudioListener.volume = Mathf.Clamp01(value);
