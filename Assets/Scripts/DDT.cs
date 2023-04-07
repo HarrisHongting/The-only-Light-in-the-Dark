@@ -37,7 +37,7 @@ public class DDT : MonoBehaviour
             StartCoroutine(SizeCoRoutine());
         }
         
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("暂停了");
             Time.timeScale = 0;

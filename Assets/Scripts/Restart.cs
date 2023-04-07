@@ -3,15 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
+    private string previousSceneName;
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        previousSceneName = PlayerPrefs.GetString("PreviousScene");
     }
-    public void RestartGame1()
+    public void RestartGame()
     {
-        Debug.Log("clicked");
-        SceneManager.LoadScene("Maze0");
+        SceneManager.LoadScene(previousSceneName);
     }
     
     public void RestartGame2()

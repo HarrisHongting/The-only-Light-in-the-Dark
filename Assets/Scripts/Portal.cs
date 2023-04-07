@@ -8,14 +8,20 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     public GameObject text;
-    
     private bool isNearby = false;
 
     private void Update()
     {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        string nextSceneName = currentSceneName == "Maze0" ? "Maze1" : "Victory";
+        
         if (isNearby && Input.GetKeyDown(KeyCode.F))
         {
-            SceneManager.LoadScene("Maze1");
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            Debug.Log("当前场景是："+ currentSceneName + ", 下个场景是："+ nextSceneName);
         }
     }
 

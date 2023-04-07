@@ -2,6 +2,7 @@
 using System.Collections;
 using Unity.Mathematics;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class MazeLoader : MonoBehaviour {
@@ -22,7 +23,8 @@ public class MazeLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		PlayerPrefs.SetString("LastScene", "Maze0");
+		PlayerPrefs.SetString("PreviousScene", SceneManager.GetActiveScene().name);
+		Debug.Log(SceneManager.GetActiveScene().name);
 
 		GenerateOuterWalls();
 		

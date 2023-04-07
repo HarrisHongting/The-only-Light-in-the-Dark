@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 3130638937415465320}
+  nextSenceName: Maze1
 --- !u!114 &369662072229694867
 MonoBehaviour:
   m_ObjectHideFlags: 0
