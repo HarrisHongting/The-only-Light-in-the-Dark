@@ -14,8 +14,14 @@ public class DDT : MonoBehaviour
 
     private float _initSize;
 
+    public GameObject GameSettings;
     private void Start()
     {
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        GameSettings.SetActive(false);
+        
         _initSize = 0.01f;
         if (_cpv.customPasses[0] is TIPS_2 f)
         {
@@ -27,13 +33,21 @@ public class DDT : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Debug.Log("Can you see?");
             StartCoroutine(SizeCoRoutine());
         }
- 
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-           // SceneManager.LoadScene("Settings");
-        //}
+        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("暂停了");
+            Time.timeScale = 0;
+            GameSettings.SetActive(true);;
+        }
+        if (GameSettings.activeSelf)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         
     }
 
