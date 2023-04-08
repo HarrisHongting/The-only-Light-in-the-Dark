@@ -82,7 +82,7 @@ public class DDT : MonoBehaviour
 
     private IEnumerator SizeCoRoutine()
     {
-        while (_initSize <= 100)
+        while (_initSize <= 150)
         {
             _initSize += 1f;
             t2.size = _initSize;

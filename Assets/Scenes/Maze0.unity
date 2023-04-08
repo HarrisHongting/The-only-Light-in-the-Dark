@@ -296,10 +296,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.5
-  MaxDistance: 10
+  MinDistance: 1
+  MaxDistance: 8
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1048,6 +1048,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: MoveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: GroundLayers.m_Bits
       value: 1
       objectReference: {fileID: 0}
@@ -1134,6 +1138,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2862278905927073192, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244626405643678211, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: analogMovement
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4253012990419024489, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
@@ -1645,7 +1653,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f629c6e43dba4bf38cb74d8860150664, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2250,7 +2258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479684733306198681, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1479684733306198681, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2258,7 +2266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479684733306198681, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1479684733306198681, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2382,11 +2390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2071618113139343539, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: MaxDistance
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2071618113139343539, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: MinDistance
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2071618113139343539, guid: a3c1e6534c0663547a62a810467a500a, type: 3}
       propertyPath: m_audioClip
@@ -3325,7 +3333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeRows: 6
-  mazeColumns: 12
+  mazeColumns: 10
   wall: {fileID: 101274, guid: 2a571ace6952b154ca2ff06b0540f264, type: 3}
   floor: {fileID: 2328171833394440284, guid: 65466e009f8fa02429b2269a815a1afe, type: 3}
   size: 5
@@ -3713,10 +3721,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Tips: \n1. JI will destroy the walls he passes, use this to your advantage!\n2.
     You can look up to the ceiling, which emits a faint light that will help you
-    find your way!"
+    find your way!\n3. Please wear your headphones to play and enjoy this 3D audio!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f629c6e43dba4bf38cb74d8860150664, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4526,7 +4534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.00012207, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1822610286
@@ -4732,6 +4740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca329ecde6b2a1544b4cffd5f35f9b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 10
 --- !u!1 &1914810098
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,7 +4829,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -838.9594, y: -447.8215}
+  m_SizeDelta: {x: -800, y: -400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915937430
 MonoBehaviour:
