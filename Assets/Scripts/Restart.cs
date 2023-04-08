@@ -14,11 +14,6 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene(previousSceneName);
     }
-    
-    public void RestartGame2()
-    {
-        SceneManager.LoadScene("Maze1");
-    }
 
     public void ExitGame()
     {

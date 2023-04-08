@@ -6,10 +6,6 @@ using UnityEngine;
 public class SettingsController : MonoBehaviour
     {
         public GameObject GameSettings;
-        void Start()
-        {
-            
-        }
 
         void Update()
         {
@@ -24,12 +20,20 @@ public class SettingsController : MonoBehaviour
         public void QuitGame()
         {
             Application.Quit();
-        } 
-        
-        public void SetFullscreen(bool value)
-        {
-            Screen.fullScreen = value; 
         }
+
+        private bool isFullScreen;
+        
+        private void Start()
+        {
+            isFullScreen = Screen.fullScreen;
+        }
+        public void ToggleFullScreen()
+        {
+            isFullScreen = !isFullScreen;
+            Screen.fullScreen = isFullScreen;
+        }
+        
         public void BackGame(){
             Time.timeScale = 1f;
             if (GameSettings.activeSelf)

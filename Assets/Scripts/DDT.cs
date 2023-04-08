@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DDT : MonoBehaviour
 {
@@ -14,12 +15,17 @@ public class DDT : MonoBehaviour
 
     private float _initSize;
 
+    public float cooldown = 10.0f; // 冷却时间
+    private float timer = 0.0f;   // 计时器
+    private bool isCooldown = false; // 是否在冷却中
+    public Image cooldownImage;
+    
     public GameObject GameSettings;
     private void Start()
     {
         
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         GameSettings.SetActive(false);
         
         _initSize = 0.01f;
@@ -33,16 +39,39 @@ public class DDT : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("Can you see?");
-            StartCoroutine(SizeCoRoutine());
+            if (!isCooldown)
+            {
+                // 激活技能
+                ActivateSkill();
+            }
         }
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (isCooldown)
+            {
+                timer -= Time.deltaTime;
+                if (timer <= 0.0f)
+                {
+                    isCooldown = false;
+                }
+                cooldownImage.fillAmount = timer / cooldown;
+            }
+
+            void ActivateSkill()
+            {
+                StartCoroutine(SizeCoRoutine());   
+                Debug.Log("Skill activated!");  
+                isCooldown = true;
+                timer = cooldown;
+                cooldownImage.fillAmount = 1.0f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("暂停了");
             Time.timeScale = 0;
             GameSettings.SetActive(true);;
         }
+            
         if (GameSettings.activeSelf)
         {
             Cursor.lockState = CursorLockMode.None;

@@ -28,8 +28,8 @@ public class MazeLoader : MonoBehaviour {
 
 		GenerateOuterWalls();
 		
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
+		//Cursor.lockState = CursorLockMode.Locked;
+		//Cursor.visible = false;
 		
 		InitializeMaze ();
 		//Instantiate(Player,new Vector3(1,1,1),Quaternion.identity);
