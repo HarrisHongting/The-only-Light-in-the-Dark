@@ -47,16 +47,16 @@ public class DDT : MonoBehaviour
         }
 
         if (isCooldown)
-            {
+        {
                 timer -= Time.deltaTime;
                 if (timer <= 0.0f)
                 {
                     isCooldown = false;
                 }
                 cooldownImage.fillAmount = timer / cooldown;
-            }
+        }
 
-            void ActivateSkill()
+        void ActivateSkill() 
             {
                 StartCoroutine(SizeCoRoutine());   
                 Debug.Log("Skill activated!");  
@@ -89,8 +89,8 @@ public class DDT : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
-        _initSize = 1f;
-        t2.size = _initSize = 1f;
+        _initSize = 0.1f;
+        t2.size = _initSize = 0.1f;
         yield return null;
     }
 }
