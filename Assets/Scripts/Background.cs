@@ -35,6 +35,11 @@ public class StoryController : MonoBehaviour
         }
     }
 
+    public void Skip()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Maze0");
+    }
+
     private IEnumerator TypeText(string text)
     {
         storyText.text = "";

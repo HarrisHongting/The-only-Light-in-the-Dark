@@ -14,7 +14,12 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene(previousSceneName);
     }
-
+    
+    public void RestartGame1()
+    {
+        SceneManager.LoadScene("Background");
+    }
+    
     public void ExitGame()
     {
         Application.Quit();
