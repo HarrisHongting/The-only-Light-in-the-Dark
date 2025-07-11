@@ -1,4 +1,4 @@
-# Final-Project
+# The Only Light in the Dark
 Download the zip and unzip it. Use Unity Hub to open this project. It should be able to run smoothly.
 (The Unity template of this project is 3D Sample Scene(HDRP), and the Unity Editor Version of this project is 2022.2.5f1)
 This game is mainly for the windows system. It also can be played on Mac.
